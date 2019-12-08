@@ -21,10 +21,10 @@
     </center>
     </div>
 
-<!-- {% if cheapest_item_list %} -->
+{% if cheapest_item_list %}
     <h2>Match your search:</h2>
     <div class="show_box_container">
-    <!-- {% for item in cheapest_item_list %} -->
+    {% for item in cheapest_item_list %}
         <div class="show_box">
         	<a href="{% url 'dota2_deco:detail' item_id %}">
         		<ul>
@@ -35,8 +35,8 @@
         		</ul>
             </a>
         </div>
-<!-- {% endfor %} -->
+{% endfor %}
     </div>
-<!-- {% else %} -->
+{% else %}
     <p>No items are available.</p>
 {% endif %}

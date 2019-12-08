@@ -22,10 +22,10 @@
     </center>
     </div>
 
-<!-- {% if latest_item_list %} -->
+{% if latest_item_list %}
     <h2>Recoment for you:</h2>
     <div class="show_box_container">
-    <!-- {% for item in latest_item_list %} -->
+    {% for item in latest_item_list %}
         <div class="show_box">
         	<a href="{% url 'dota2_deco:detail' item_id %}">
         		<ul>
@@ -36,8 +36,8 @@
         		</ul>
             </a>
         </div>
-<!-- {% endfor %} -->
+{% endfor %}
     </div>
-<!-- {% else %} -->
+{% else %}
     <p>No items are available.</p>
 {% endif %}

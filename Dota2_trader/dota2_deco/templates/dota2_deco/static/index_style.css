@@ -33,6 +33,15 @@ button {
   opacity: 0.9;
 }
 
+button:hover {
+  opacity: 1;
+}
+
+.show_box:hover{
+  background-color: rgb(230,230,230);
+  opacity: 1;
+}
+
 .show_box_container {
 	display: flex;
 	flex-direction: row;
