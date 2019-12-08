@@ -5,7 +5,7 @@ from .models import Decorations, Items
 
 def index(request):
     # latest_item_list = Items.objects.order_by('-pub_date')[:5]
-    # template = loader.get_template('decoration_app/index.html')
+    # template = loader.get_template('dota2_deco/index.html')
     # context = {
     #     'latest_item_list': latest_item_list,
     # }
@@ -14,4 +14,4 @@ def index(request):
 
  def detail(request, question_id):
     item = get_object_or_404(Item, pk=item_id)
-    return render(request, 'decoration_app/detail.html', {'item': item, 'decoration': item.item_type})
+    return render(request, 'dota2_deco/detail.html', {'item': item, 'decoration': item.item_type})

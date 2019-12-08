@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class DecorationAppConfig(AppConfig):
-    name = 'decoration_app'
+    name = 'dota2_deco'
