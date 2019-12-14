@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="./static/login_page_style.css">
+</head>
+
+<body>
+
+<form action="/action_page.php" style="border:1px solid #ccc">
+  <div class="container">
+    <h1>Login</h1>
+    <p>Please login here with your email/username</p>
+    <hr>
+
+    <label for="email"><b>Email/username</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <label>
+      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+    </label>
+    
+    <p>Forget password? <a href="#" style="color:dodgerblue">reset password</a>.</p>
+    <p>Still dont have an account? <a href="#" style="color:dodgerblue">register here</a>.</p>
+
+    <div class="clearfix">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <button type="submit" class="signupbtn">login</button>
+    </div>
+  </div>
+</form>
+
+</body>
+</html>
