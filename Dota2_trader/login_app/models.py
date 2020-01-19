@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.dd
-class user(models.Model):
+class User(models.Model):
 	"""docstring for user"""
 	user_name = models.CharField(max_length=200)
 	user_email = models.CharField(max_length=200)

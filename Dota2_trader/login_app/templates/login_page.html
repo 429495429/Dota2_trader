@@ -1,7 +1,8 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
 <head>
-    <link rel="stylesheet" href="./static/login_page_style.css">
+    <link rel="stylesheet" href="{% static 'login_page_style.css' %}">
 </head>
 
 <body>
@@ -13,16 +14,16 @@
     <hr>
 
     <label for="email"><b>Email/username</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
+    <input id="username" type="text" placeholder="Enter Email" name="email" required>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input id="password" type="password" placeholder="Enter Password" name="psw" required>
 
     <label>
       <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
     </label>
     
-    <p>Forget password? <a href="#" style="color:dodgerblue">reset password</a>.</p>
+    <p>Forget password? <a href="{% url 'login_app:forget_password' %}" style="color:dodgerblue">reset password</a>.</p>
     <p>Still dont have an account? <a href="#" style="color:dodgerblue">register here</a>.</p>
 
     <div class="clearfix">

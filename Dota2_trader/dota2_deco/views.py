@@ -5,7 +5,7 @@ from .models import Decorations, Items
 
 #edit if fulltext search
 def index(request):
-    latest_item_list = Items.objects.order_by('-pub_date')[:5]
+    latest_item_list = Items.objects.order_by('-pub_date')[:20]
     template = loader.get_template('dota2_deco/index.html')
     context = {
         'latest_item_list': latest_item_list,

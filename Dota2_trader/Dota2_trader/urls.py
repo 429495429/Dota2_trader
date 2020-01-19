@@ -19,4 +19,5 @@ from django.urls import path,include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('dota2_deco/',include('dota2_deco.urls')),
+    path('login/',include('login_app.urls')),
 ]
