@@ -29,7 +29,7 @@
     <div class="show_box_container">
     {% for item in cheapest_item_list %}
         <div class="show_box">
-        	<a href="{% url 'dota2_deco:detail' item.id %}">
+        	<a href="{% url 'dota2_deco:detail' item_id=item.item_id %}">
         		<ul>
         		    <li>{{ item.item_type }}</li>
         			<li>{{ item.price }}</li>
@@ -51,7 +51,7 @@
     <div class="show_box_container">
     {% for item in latest_item_list %}
         <div class="show_box">
-        	<a href="{% url 'dota2_deco:detail' item.id %}">
+        	<a href="{% url 'dota2_deco:detail' item_id=item.item_id %}">
         		<ul>
         		    <li>{{ item.item_type }}</li>
         			<li>{{ item.price }}</li>
