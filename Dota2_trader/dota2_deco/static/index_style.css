@@ -1,11 +1,11 @@
 h1 {
-	margin-top: 10%;
+	margin-top: 5%;
 	margin-bottom: 5%;
 }
 
 .top_margin{
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-end;
 }
 
 input[type=text] {
@@ -17,9 +17,11 @@ input[type=text] {
   background: #f1f1f1;
 }
 
-.signupbtn {
+.accessbtn {
+  background-color: lightskyblue;
+  margin: 0 10%;
   float: left;
-  width: 50%;
+  width: 100%;
 }
 
 button {

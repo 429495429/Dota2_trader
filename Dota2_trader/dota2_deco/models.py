@@ -1,5 +1,6 @@
 import datetime
 from django.db import models
+
 from django.utils import timezone
 
 # # Create your models here.
@@ -19,11 +20,11 @@ class Decorations(models.Model):
 
 class Items(models.Model):
     
-    item_id = models.IntegerField()
+    item_id = models.AutoField(primary_key=True)
     item_type = models.ForeignKey(Decorations, on_delete=models.CASCADE)
     publisher_id = models.CharField(max_length=50)
     price = models.FloatField()
     pub_date = models.DateTimeField('date published')
 
     def __str__(self):
-        return f" {self.item_type} ${price} by {publisher_id}"
+        return f" {self.item_type} ${self.price} by {self.publisher_id}"
