@@ -27,22 +27,6 @@
         </center>
     </div>
 
-<<<<<<< HEAD
-<div id="search_result" hidden>
-    {% if cheapest_item_list %}
-    <h2>Recoment for you:</h2>
-    <div class="show_box_container">
-    {% for item in cheapest_item_list %}
-        <div class="show_box">
-        	<a href="{% url 'dota2_deco:detail' item_id=item.item_id %}">
-        		<ul>
-        		    <li>{{ item.item_type }}</li>
-        			<li>{{ item.price }}</li>
-        			<li>{{ item.pub_date }}</li>
-        			<li>{{ item.publisher_id }}</li>
-        		</ul>
-            </a>
-=======
     {% if user_search_results %}
     <div id="search_result">
         <h2>From your search:</h2>
@@ -59,28 +43,11 @@
                 </a>
             </div>
             {% endfor %}
->>>>>>> fffb6a7d80e55553351ad8e2228b8f6112a8fd38
         </div>
 
     </div>
     {% endif %}
 
-<<<<<<< HEAD
-<div id="default">
-{% if latest_item_list %}
-    <h2>Recoment for you:</h2>
-    <div class="show_box_container">
-    {% for item in latest_item_list %}
-        <div class="show_box">
-        	<a href="{% url 'dota2_deco:detail' item_id=item.item_id %}">
-        		<ul>
-        		    <li>{{ item.item_type }}</li>
-        			<li>{{ item.price }}</li>
-        			<li>{{ item.pub_date }}</li>
-        			<li>{{ item.publisher_id }}</li>
-        		</ul>
-            </a>
-=======
     <div id="default">
         {% if latest_item_list %}
         <h2>The most recent uploads:</h2>
@@ -97,7 +64,6 @@
                 </a>
             </div>
             {% endfor %}
->>>>>>> fffb6a7d80e55553351ad8e2228b8f6112a8fd38
         </div>
         {% else %}
         <p>No items are available.</p>
