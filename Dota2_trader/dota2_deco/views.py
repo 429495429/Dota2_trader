@@ -14,7 +14,6 @@ def index(request):
         'latest_item_list': latest_item_list,
     }
     return HttpResponse(template.render(context, request))
-    # return HttpResponse("hello")
 
 def detail(request, item_id):
     item = get_object_or_404(Item, pk=item_id)
@@ -24,10 +23,24 @@ def detail(request, item_id):
 @csrf_exempt
 def search(request):
     keyword = request.POST.get('keyword')
-    cheapest_item_list = Items.objects.filter(item_type=keyword).order_by('price')
+
+    print('Items.objects = ', Items.objects)
+    # cheapest_item_list = Items.objects.filter(item_type=keyword).order_by('price')
+    all_results = Items.objects.all()
+    lastest_results = all_results.order_by('pub_date')
+
+    # filter by item_type == keyword
+    result = []
+    for each in all_results.order_by('price'):
+        if each.item_type.decoration_name == keyword:
+            result.append(each)
+
+
     template = loader.get_template('dota2_deco/search.html')
     context = {
-        'cheapest_item_list': cheapest_item_list,
+        'user_search_results': result[:20],
+        'latest_item_list': lastest_results[:20],
+        'keyword': keyword
     }
     return render(request,'dota2_deco/index.html',context)
     # return HttpResponse("hello")
