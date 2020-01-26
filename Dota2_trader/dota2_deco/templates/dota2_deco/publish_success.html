@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'publish_css.css' %}">
+</head>
+
+<body>
+
+<div style="border:1px solid #ccc">
+<div class="container">
+    <h1>Published Success</h1>
+    <p> </p>
+    <hr>
+
+    
+    <div class="clearfix">
+      <a href="{% url 'dota2_deco:index' %}"><button>back to index</button></a>
+    </div>
+</div>
+</div>
+</body>
+</html>
