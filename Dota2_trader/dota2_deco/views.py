@@ -55,7 +55,7 @@ def publish(request):
 def item_upload(request):
     this_type = request.POST['type']
     this_price = request.POST['price']
-    this_publisher = '#'
+    this_publisher = 'default_user'
     this_item = Items(item_type=this_type,publisher_id=this_publisher,item_price=this_price)
     this_item.save()
     return render(request,'dota2_deco/publish_success.html')
