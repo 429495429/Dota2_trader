@@ -16,7 +16,7 @@ def index(request):
     return HttpResponse(template.render(context, request))
 
 def detail(request, item_id):
-    item = get_object_or_404(Item, pk=item_id)
+    item = get_object_or_404(Items, pk=item_id)
     return render(request, 'dota2_deco/detail.html', {'item': item, 'decoration': item.item_type})
 
 #edit if keyword search
