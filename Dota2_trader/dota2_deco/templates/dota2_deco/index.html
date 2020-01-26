@@ -3,8 +3,8 @@
     <div class="top_margin">
         <span>
         </span>
-        <div><button class="accessbtn">Login</button></div>
-        <div><button class="accessbtn">Register</button></div>
+        <div><a href="{% url 'login_app:index' %}"><button class="accessbtn">Login</button></a></div>
+        <div><a href="{% url 'login_app:index' %}"><button class="accessbtn">Register</button></a></div>
     </div>
 
     <link rel="stylesheet" href="{% static 'index_style.css' %}">
