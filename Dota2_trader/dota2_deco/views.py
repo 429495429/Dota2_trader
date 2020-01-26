@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 import random
+import datetime
 from django.http import HttpResponse, Http404, HttpResponseRedirect, JsonResponse
 from django.template import loader
 from django.urls import reverse
@@ -24,7 +25,6 @@ def detail(request, item_id):
 def search(request):
     keyword = request.POST.get('keyword')
 
-    print('Items.objects = ', Items.objects)
     # cheapest_item_list = Items.objects.filter(item_type=keyword).order_by('price')
     all_results = Items.objects.all()
     lastest_results = all_results.order_by('pub_date')
@@ -35,8 +35,6 @@ def search(request):
         if each.item_type.decoration_name == keyword:
             result.append(each)
 
-
-    template = loader.get_template('dota2_deco/search.html')
     context = {
         'user_search_results': result[:20],
         'latest_item_list': lastest_results[:10],
@@ -52,10 +50,28 @@ def publish(request):
     }
     return render(request,'dota2_deco/publish.html',context)
 
+@csrf_exempt
 def item_upload(request):
     this_type = request.POST['type']
     this_price = request.POST['price']
     this_publisher = 'default_user'
-    this_item = Items(item_type=this_type,publisher_id=this_publisher,item_price=this_price)
+    this_decoration = Decorations.objects.get(decoration_name=this_type)
+    this_item = Items(item_type=this_decoration,publisher_id=this_publisher,price=float(this_price),pub_date=datetime.datetime.now())
     this_item.save()
+
+    all_results = Items.objects.all()
+    # filter by item_type == this_type
+    result = []
+    for each in all_results:
+        if each.item_type.decoration_name == this_type:
+            result.append(each)
+    total_price = 0
+    count=0
+    for each_item in result:
+        total_price += each_item.price
+        count +=1
+
+    this_decoration.decoration_average_price = total_price/count
+    this_decoration.save()
+
     return render(request,'dota2_deco/publish_success.html')
