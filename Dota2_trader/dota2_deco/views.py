@@ -11,7 +11,7 @@ def index(request):
     latest_item_list = Items.objects.order_by('-pub_date')
     template = loader.get_template('dota2_deco/index.html')
     context = {
-        'latest_item_list': latest_item_list,
+        'latest_item_list': latest_item_list[:20],
     }
     return HttpResponse(template.render(context, request))
 
@@ -39,7 +39,7 @@ def search(request):
     template = loader.get_template('dota2_deco/search.html')
     context = {
         'user_search_results': result[:20],
-        'latest_item_list': lastest_results[:20],
+        'latest_item_list': lastest_results[:10],
         'keyword': keyword
     }
     return render(request,'dota2_deco/index.html',context)

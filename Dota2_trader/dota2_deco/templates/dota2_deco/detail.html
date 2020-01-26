@@ -5,24 +5,28 @@
     <link rel="stylesheet" href="{% static 'detail_style.css' %}">
 </head>
 <body>
+
+<form action="#" style="border:1px solid #ccc" method="POST">
 <div class="container">
-<h2>Decoration describtion:</h2>
-<div id="decoraiotn">
+<h1>Decoration describtion:</h1>
+<div class="decoration_info">
 <ul>
-  <li>{{decoration.decoration_name}}</li>
-  <li>{{decoration.decoration_champion}}</li>
-  <li>{{decoration.decoration_part}}</li>
-  <li>{{decoration.decoration_rarelity}}</li>
-  <li>{{decoration.decoration_average_price}}</li>
+  <li><label>Item:  </label>{{decoration.decoration_name}}</li>
+  <li><label>Champion:  </label>{{decoration.decoration_champion}}</li>
+  <li><label>Part:  </label>{{decoration.decoration_part}}</li>
+  <li><label>Rarelity:  </label>{{decoration.decoration_rarelity}}</li>
+  <li><label>Recent average price:</label>{{decoration.decoration_average_price}}</li>
 
 </ul>
 </div>
-<h2>Item Details</h2>
+<h1>Item Details</h1>
+<div class="item_info">
 <ul>
-  <li>{{item.item_type}}</li>
-  <li>{{item.price}}</li>
-  <li>{{item.pub_date}}</li>
+  <li><label>Price:  </label>{{item.price}}</li>
+  <li><label>Po by:  </label>{{item.publisher_id}}</li>
+  <li><label>Date:  </label>{{item.pub_date}}</li>
 </ul>
 </div>
+</form>
 </body>
 </html>
