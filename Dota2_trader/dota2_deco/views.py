@@ -41,8 +41,8 @@ def search(request):
         'keyword': keyword
     }
     return render(request,'dota2_deco/index.html',context)
-    # return HttpResponse("hello")
 
+#publishing item
 def publish(request):
     type_list = Decorations.objects.all()
     context = {
@@ -50,6 +50,7 @@ def publish(request):
     }
     return render(request,'dota2_deco/publish.html',context)
 
+#upload item to the database
 @csrf_exempt
 def item_upload(request):
     this_type = request.POST['type']
